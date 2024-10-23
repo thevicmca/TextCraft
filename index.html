@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TextCraft - Conversor de Texto</title>
   <style>
+    /* Estilos globales */
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f3f4f6;
@@ -17,6 +18,7 @@
 
     .container {
       width: 50%;
+      max-width: 600px;
       background-color: #ffffff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
@@ -50,6 +52,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      font-size: 16px;
     }
 
     button:hover {
@@ -83,9 +86,39 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Media Queries para pantallas pequeñas (móviles) */
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+
+      textarea {
+        height: 200px;
+        font-size: 14px;
+      }
+
+      button {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      textarea {
+        height: 150px;
+        font-size: 13px;
+      }
+
+      button {
+        font-size: 16px;
+      }
+    }
     .container li{
         text-align: left;
-        font-size: 14px;
+        font-size: 12px;
     }
   </style>
 </head>
@@ -107,7 +140,7 @@
 
   <footer>
     <p>&copy; 2024 TextCraft. Todos los derechos reservados.</p>
-    <p>Página creada por <a href="https://www.facebook.com/profile.php?id=100007184474765">Victor Cartagena.</a></p>
+    <p>Hecho con 💻 por <a href="https://www.facebook.com/profile.php?id=100007184474765">Victor Cartagena</a></p>
   </footer>
 
   <script>
