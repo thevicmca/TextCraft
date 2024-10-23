@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TextCraft - Conversor de Texto</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 50%;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      margin: auto;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 20px;
+      resize: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    button:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+
+    footer {
+      background-color: #2c2c2c;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+      border-top: 1px solid #444;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .container li{
+        text-align: left;
+        font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TextCraft - Conversor de Texto</h1>
+    <textarea id="inputText" placeholder="Escribe tu texto aquí..."></textarea>
+    <br />
+    <button onclick="convertToUpperCase()">MAYÚSCULAS</button>
+    <button onclick="convertToLowerCase()">minúsculas</button>
+    <button onclick="capitalizeSentences()">Mayúsculas después del punto</button>
+    <button onclick="capitalizeWords()">Capitalizar Texto</button>
+    <br><br>
+    <li>Todo MAYÚSCULAS: Convierte todos los caracteres del texto a mayúsculas.</li>
+    <li>Todo minúsculas: Convierte todos los caracteres del texto a minúsculas.</li>
+    <li>Mayúsculas después de punto: Convierte a mayúsculas justo después de punto o al comienzo del parrafo.</li>    
+    <li>Capitalizar texto: Convierte la primera letra de cada palabra a mayúscula.</li>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 TextCraft. Todos los derechos reservados.</p>
+    <p>Página creada por <a href="https://www.facebook.com/profile.php?id=100007184474765">Victor Cartagena.</a></p>
+  </footer>
+
+  <script>
+    const inputText = document.getElementById('inputText');
+
+    function convertToUpperCase() {
+      inputText.value = inputText.value.toUpperCase();
+    }
+
+    function convertToLowerCase() {
+      inputText.value = inputText.value.toLowerCase();
+    }
+
+    function capitalizeSentences() {
+      inputText.value = inputText.value
+        .toLowerCase()
+        .replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+    }
+
+    function capitalizeWords() {
+      inputText.value = inputText.value
+        .toLowerCase()
+        .replace(/\b\w/g, c => c.toUpperCase());
+    }
+  </script>
+</body>
+</html>
